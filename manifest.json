@@ -1,8 +1,9 @@
 {
     "name": "SMLB",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Your battery should be between 40 and 80% if lithium, and never long charge (Max 50%)",
-    "icons" : {
+    "permissions": ["notifications"],
+    "icons": {
         "128": "md128.png",
         "16": "md16.png",
         "32": "md32.png",
@@ -12,14 +13,14 @@
     "permissions": [
         "notifications"
     ],
-    "options_page": "options.html",
     "background": {
-        "scripts": [
-            "background.js"
-        ]
+        "service_worker": "background.js"
     },
-    "manifest_version": 2,
+    "manifest_version": 3,
     "web_accessible_resources": [
-        "md48.png"
+        {
+            "resources": ["md48.png"],
+            "matches": ["<all_urls>"]
+        }
     ]
 }
